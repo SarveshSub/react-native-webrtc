@@ -49,7 +49,8 @@ export function addListener(listener: Listener, eventName: string, eventHandler:
         _subscriptions.set(listener, []);
     }
 
-    _subscriptions.get(listener)?.push(eventEmitter.addListener(eventName, eventHandler));
+    // src/EventEmitter.ts - around line 52
+    _subscriptions.get(listener)?.push(eventEmitter.addListener(eventName, eventHandler) as any);
 }
 
 export function removeListener(listener: Listener): void {

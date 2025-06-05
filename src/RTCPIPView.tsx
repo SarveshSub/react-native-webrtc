@@ -5,7 +5,7 @@ import RTCView, { RTCIOSPIPOptions, RTCVideoViewProps } from './RTCView';
 
 export interface RTCPIPViewProps extends RTCVideoViewProps {
   iosPIP?: RTCIOSPIPOptions & {
-    fallbackView?: Component;
+    fallbackView?: React.ReactNode;
   };
 }
 
